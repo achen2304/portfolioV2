@@ -1,16 +1,25 @@
-import express from 'express';
-import nodemailer from 'nodemailer';
-import cors from 'cors';
+// Load environment variables from .env file
 import dotenv from 'dotenv';
-
 dotenv.config();
 
+// Log the environment variables to ensure they are loaded correctly
+console.log('Email:', process.env.EMAIL);
+console.log('Email Password:', process.env.EMAIL_PASSWORD);
+
+import express from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import nodemailer from 'nodemailer';
+
+// Initialize Express app
 const app = express();
+const PORT = process.env.PORT || 3001;
 
+// Middleware
+app.use(bodyParser.json());
 app.use(cors());
-app.use(express.json());
 
-// Create transporter
+// Nodemailer transporter setup
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -19,13 +28,19 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+// Root route to test server
+app.get('/', (req, res) => {
+  res.send('Welcome to the backend server!');
+});
+
+// Contact route to handle form submissions
 app.post('/api/contact', async (req, res) => {
   const { name, email, message } = req.body;
 
   try {
     await transporter.sendMail({
       from: process.env.EMAIL,
-      to: process.env.EMAIL, // Where you want to receive emails
+      to: process.env.EMAIL,
       subject: `Portfolio Contact from ${name}`,
       text: `
         Name: ${name}
@@ -47,7 +62,7 @@ app.post('/api/contact', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3001;
+// Start server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

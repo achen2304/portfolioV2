@@ -1,49 +1,96 @@
+import { getImageUrl } from '../utils/img';
+
 export const Projects = () => {
   const projects = [
     {
-      title: 'Project One',
-      description: 'A full-stack web application built with React and Node.js',
-      tech: ['React', 'Node.js', 'MongoDB'],
-      link: '#',
-      github: '#',
+      title: 'Chardle.com - Character Guessing Game',
+      description:
+        'A full-stack web game built with React/Tailwind CSS and Express.js/MongoDB with over 300 Daily Active Users.',
+      tech: [
+        'JavaScript',
+        'React',
+        'Tailwind CSS',
+        'Node.js',
+        'Express',
+        'MongoDB',
+      ],
+      image: 'chardle.png',
+      link: 'https://chardle.com/',
     },
     {
-      title: 'Project Two',
-      description: 'Mobile-first responsive website with modern animations',
-      tech: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
+      title: 'Portfolio V1',
+      description:
+        'My First Portfolio Website using React and NodeMailer for a basic backend. Built with Tailwind CSS and Framer Motion. ',
+      tech: ['React', 'Node.js', 'Express'],
+      image: 'portfolio_v1.png',
       link: '#',
-      github: '#',
+      github: 'https://github.com/achen2304/portfolio-website',
     },
-    // Add more projects as needed
+    {
+      title: 'Pi Pico KeyBoard',
+      description: 'A keyboard made using a Raspberry Pi Pico and custom PCB.',
+      tech: ['Raspberry Pi Pico', 'KiCad'],
+      image: 'keyboard_v1.png',
+      github: 'https://github.com/achen2304/Pi-Pico-Keyboard',
+    },
   ];
 
   return (
     <section id="projects" className="py-20">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center text-primary">
+          Projects
+        </h2>
         <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="card bg-neutral-900 hover:shadow-lg transition-shadow"
+              className="card border border-primary/20 hover:shadow-lg transition-shadow backdrop-blur-[2px] bg-base-100/5"
             >
+              {project.image && (
+                <figure className="px-4 pt-4">
+                  <img
+                    src={getImageUrl(project.image)}
+                    alt={project.title}
+                    className="rounded-xl object-cover w-full h-48"
+                    loading="lazy"
+                  />
+                </figure>
+              )}
               <div className="card-body">
-                <h3 className="card-title">{project.title}</h3>
-                <p className="text-neutral-content/80">{project.description}</p>
+                <h3 className="card-title text-primary">{project.title}</h3>
+                <p className="text-primary/80">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mt-4">
                   {project.tech.map((tech, techIndex) => (
-                    <span key={techIndex} className="badge badge-outline">
+                    <span
+                      key={techIndex}
+                      className="badge badge-outline text-primary"
+                    >
                       {tech}
                     </span>
                   ))}
                 </div>
                 <div className="card-actions justify-end mt-4">
-                  <a href={project.github} className="btn btn-sm btn-outline">
-                    GitHub
-                  </a>
-                  <a href={project.link} className="btn btn-sm btn-primary">
-                    Live Demo
-                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      className="btn btn-sm btn-outline text-primary hover:bg-primary hover:text-base-100"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub
+                    </a>
+                  )}
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      className="btn btn-sm btn-outline text-primary hover:bg-primary hover:text-base-100"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Live Demo
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

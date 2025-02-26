@@ -1,3 +1,5 @@
+import { FaLocationDot } from 'react-icons/fa6';
+
 export const Hero = () => {
   return (
     <section
@@ -12,17 +14,23 @@ export const Hero = () => {
 
       {/* Content */}
       <div className="text-center relative z-10">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
-          Your Name
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-primary">
+          Cai Chen
         </h1>
-        <p className="text-xl md:text-2xl text-white/80 mb-8">
-          Software Developer
+        <p className="text-xl md:text-2xl text-primary/80 mb-2">
+          Full Stack Developer
         </p>
+        <p className="text-xl md:text-lg text-primary/80 mb-8 flex items-center justify-center gap-2">
+          <FaLocationDot className="text-primary" />
+          Ames, Iowa
+        </p>
+
         <div className="flex justify-center items-center space-x-6">
           <a
-            href="/path-to-your-resume.pdf"
-            download
-            className="btn btn-outline btn-white text-white hover:bg-white hover:text-deep-black"
+            href="/resume/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-outline text-primary hover:bg-primary hover:text-base-100 transition-shadow backdrop-blur-[2px] bg-base-100/5"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -42,10 +50,10 @@ export const Hero = () => {
           </a>
 
           <a
-            href="https://linkedin.com/in/your-profile"
+            href="https://linkedin.com/in/achen2304"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-circle btn-outline btn-white text-white hover:bg-white hover:text-deep-black"
+            className="btn btn-circle btn-outline text-primary hover:bg-primary hover:text-base-100 transition-shadow backdrop-blur-[2px] bg-base-100/5"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -58,10 +66,10 @@ export const Hero = () => {
           </a>
 
           <a
-            href="https://github.com/your-username"
+            href="https://github.com/achen2304"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-circle btn-outline btn-white text-white hover:bg-white hover:text-deep-black"
+            className="btn btn-circle btn-outline text-primary hover:bg-primary hover:text-base-100 transition-shadow backdrop-blur-[2px] bg-base-100/5"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
