@@ -1,10 +1,11 @@
-* {
-  background-color: gray;
+html {
+  scroll-behavior: smooth;
 }
 
-#root {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+  overflow-x: hidden;
+}
+
+section {
+  scroll-margin-top: 5rem;
 }
