@@ -70,27 +70,28 @@ export const Contact = () => {
           <div className="card border border-primary/20 transition-shadow backdrop-blur-[2px] bg-base-100/5">
             <div className="card-body flex flex-col items-center justify-center">
               <div className="space-y-6 text-center">
-                <div className="flex items-center space-x-3">
-                  <IoMail className="text-primary" />
+                <div className="flex items-center space-x-3 text-primary/80 hover:text-primary transition-colors">
+                  <IoMail />
                   <button
                     onClick={() => copyToClipboard('achen2304@gmail.com')}
-                    className="text-sm text-primary/80 hover:text-primary transition-colors"
+                    className="text-sm"
                   >
                     achen2304@gmail.com
                   </button>
                 </div>
 
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-3 text-primary/80 hover:text-primary transition-colors">
                   <FaPhoneAlt className="text-primary" />
-                  <span className="text-sm text-primary">641-808-8022</span>
+                  <span className="text-sm">641-808-8022</span>
                 </div>
 
-                <div className="flex items-center space-x-3">
-                  <FaNewspaper className="text-primary" />
+                <div className="flex items-center space-x-3 text-primary/80 hover:text-primary transition-colors">
+                  <FaNewspaper />
                   <a
-                    href="/resume/CaiChen_Resume.pdf"
-                    download="CaiChen_Resume.pdf"
-                    className="text-sm text-primary hover:text-primary transition-colors"
+                    href="/resume/resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm"
                   >
                     Resume
                   </a>
@@ -101,7 +102,7 @@ export const Contact = () => {
                     href="https://github.com/achen2304"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn-circle btn-outline text-primary hover:bg-primary hover:border-primary"
+                    className="btn btn-circle btn-outline text-primary/80 hover:bg-primary hover:border-primary"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +117,7 @@ export const Contact = () => {
                     href="https://linkedin.com/in/achen2304"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn-circle btn-outline text-primary hover:bg-primary hover:border-primary"
+                    className="btn btn-circle btn-outline text-primary/80 hover:bg-primary hover:border-primary"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
