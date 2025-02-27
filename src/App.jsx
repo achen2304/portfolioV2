@@ -48,7 +48,7 @@ function App() {
       <div
         className={`fixed inset-0 ${
           theme === 'dark' ? 'bg-grid-pattern-dark' : 'bg-grid-pattern-light'
-        } bg-grid opacity-60`}
+        } bg-grid opacity-70`}
         style={{
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
