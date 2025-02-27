@@ -24,7 +24,7 @@ export const Contact = () => {
     setStatus('sending');
 
     try {
-      const response = await fetch('http://localhost:3001/api/contact', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -32,17 +32,17 @@ export const Contact = () => {
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
-
-      if (response.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        setStatus('error');
+      if (!response.ok) {
+        throw new Error('Failed to send message');
       }
+
+      setStatus('sent');
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => setStatus(''), 3000);
     } catch (error) {
       console.error('Error:', error);
       setStatus('error');
+      setTimeout(() => setStatus(''), 3000);
     }
   };
 
@@ -72,7 +72,7 @@ export const Contact = () => {
                   <IoMail className="text-primary" />
                   <button
                     onClick={() => copyToClipboard('achen2304@gmail.com')}
-                    className="text-lg text-primary/80 hover:text-primary transition-colors"
+                    className="text-sm text-primary/80 hover:text-primary transition-colors"
                   >
                     achen2304@gmail.com
                   </button>
@@ -80,7 +80,7 @@ export const Contact = () => {
 
                 <div className="flex items-center space-x-3">
                   <FaPhoneAlt className="text-primary" />
-                  <span className="text-lg text-primary">641-808-8022</span>
+                  <span className="text-sm text-primary">641-808-8022</span>
                 </div>
 
                 <div className="flex items-center space-x-3">
@@ -88,7 +88,7 @@ export const Contact = () => {
                   <a
                     href="/resume/CaiChen_Resume.pdf"
                     download="CaiChen_Resume.pdf"
-                    className="text-lg text-primary hover:text-primary transition-colors"
+                    className="text-sm text-primary hover:text-primary transition-colors"
                   >
                     Resume
                   </a>
