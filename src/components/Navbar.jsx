@@ -20,10 +20,10 @@ export const Navbar = () => {
         <ul className="flex flex-wrap justify-center items-center gap-4 md:gap-8 w-full text-base text-primary/80">
           <li>
             <a
-              href="#about"
+              href="#"
               className="transition-all duration-200 hover:text-primary hover:scale-110 inline-block"
             >
-              About
+              Home
             </a>
           </li>
           <li>
