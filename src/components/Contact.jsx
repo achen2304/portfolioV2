@@ -32,11 +32,13 @@ export const Contact = () => {
         body: JSON.stringify(formData),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error('Failed to send message');
+        throw new Error(data.message || 'Failed to send message');
       }
 
-      setStatus('sent');
+      setStatus('success');
       setFormData({ name: '', email: '', message: '' });
       setTimeout(() => setStatus(''), 3000);
     } catch (error) {
