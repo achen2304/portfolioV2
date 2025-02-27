@@ -7,7 +7,7 @@ export default async function handler(req, res) {
 
   // Log to verify environment variables
   console.log('Checking environment variables...');
-  if (!process.env.EMAIL_USER || !process.env.EMAIL_APP_PASSWORD) {
+  if (!process.env.EMAIL || !process.env.EMAIL_PASSWORD) {
     console.error('Missing email configuration');
     return res.status(500).json({ message: 'Server configuration error' });
   }
@@ -25,8 +25,8 @@ export default async function handler(req, res) {
       port: 587,
       secure: false,
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_APP_PASSWORD,
+        user: process.env.EMAIL,
+        pass: process.env.EMAIL_PASSWORD,
       },
     });
 
@@ -34,8 +34,8 @@ export default async function handler(req, res) {
     await transporter.verify();
 
     const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
+      from: process.env.EMAIL,
+      to: process.env.EMAIL,
       subject: `Portfolio Contact from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
       html: `
