@@ -10,10 +10,10 @@ export default {
         'deep-black': '#000000',
       },
       backgroundImage: {
-        'grid-pattern-dark': `linear-gradient(to right, rgb(255 255 255 / 0.3) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgb(255 255 255 / 0.3) 1px, transparent 1px)`,
-        'grid-pattern-light': `linear-gradient(to right, rgb(0 0 0 / 0.3) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgb(0 0 0 / 0.3) 1px, transparent 1px)`,
+        'grid-pattern-dark': `linear-gradient(to right, rgb(255 255 255 / 0.1) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgb(255 255 255 / 0.1) 1px, transparent 1px)`,
+        'grid-pattern-light': `linear-gradient(to right, rgb(0 0 0 / 0.1) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgb(0 0 0 / 0.1) 1px, transparent 1px)`,
       },
       backgroundSize: {
         grid: '40px 40px',

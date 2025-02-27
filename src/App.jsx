@@ -23,7 +23,7 @@ function App() {
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.attributeName === 'data-theme') {
-           const newTheme = document.documentElement.getAttribute('data-theme');
+          const newTheme = document.documentElement.getAttribute('data-theme');
           setTheme(newTheme);
           localStorage.setItem('theme', newTheme);
         }
@@ -48,7 +48,7 @@ function App() {
       <div
         className={`fixed inset-0 ${
           theme === 'dark' ? 'bg-grid-pattern-dark' : 'bg-grid-pattern-light'
-        } bg-grid opacity-20`}
+        } bg-grid opacity-60`}
         style={{
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
