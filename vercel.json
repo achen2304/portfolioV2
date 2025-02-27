@@ -1,13 +1,8 @@
 {
   "buildCommand": "npm run build",
-  "devCommand": "npm run dev",
+  "devCommand": "npm run dev:all",
   "installCommand": "npm install",
   "framework": "vite",
   "outputDirectory": "dist",
-  "rewrites": [
-    {
-      "source": "/api/:path*",
-      "destination": "/api/:path*"
-    }
-  ]
+  "routes": [{ "src": "/api/contact", "dest": "/api/contact.js" }]
 }
