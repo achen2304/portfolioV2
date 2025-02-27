@@ -5,7 +5,7 @@ export const Projects = () => {
     {
       title: 'Chardle.com - Character Guessing Game',
       description:
-        'A full-stack web game built with React/Tailwind CSS and Express.js/MongoDB with over 300 Daily Active Users.',
+        'A full-stack web game built with React/Tailwind CSS and Express.js/MongoDB with over 100 Daily Active Users.',
       tech: [
         'JavaScript',
         'React',

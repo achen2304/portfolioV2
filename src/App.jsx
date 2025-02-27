@@ -10,20 +10,20 @@ import { Contact } from './components/Contact';
 
 function App() {
   const [theme, setTheme] = useState(() => {
-    // Get theme from localStorage or default to 'dark'
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    return savedTheme;
+    return localStorage.getItem('theme') || 'dark';
   });
+
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     // Set initial theme
     document.documentElement.setAttribute('data-theme', theme);
+    setIsLoaded(true);
 
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.attributeName === 'data-theme') {
-          const newTheme = document.documentElement.getAttribute('data-theme');
+           const newTheme = document.documentElement.getAttribute('data-theme');
           setTheme(newTheme);
           localStorage.setItem('theme', newTheme);
         }
@@ -36,7 +36,11 @@ function App() {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [theme]);
+
+  if (!isLoaded) {
+    return null; // or a loading spinner
+  }
 
   return (
     <div className="min-h-screen bg-base-100 text-primary relative">
@@ -45,7 +49,10 @@ function App() {
         className={`fixed inset-0 ${
           theme === 'dark' ? 'bg-grid-pattern-dark' : 'bg-grid-pattern-light'
         } bg-grid opacity-20`}
-        style={{ backgroundPosition: 'center' }}
+        style={{
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+        }}
       />
 
       {/* Content */}

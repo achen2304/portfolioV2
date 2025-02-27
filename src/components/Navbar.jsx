@@ -1,4 +1,7 @@
 import { useEffect } from 'react';
+import { FaHome, FaSun } from 'react-icons/fa';
+import { MdCardTravel } from 'react-icons/md';
+import { FaNewspaper, FaScrewdriverWrench } from 'react-icons/fa6';
 
 export const Navbar = () => {
   useEffect(() => {
@@ -15,15 +18,18 @@ export const Navbar = () => {
   };
 
   return (
-    <div className="navbar fixed left-0 right-0 z-50 flex justify-center mt-4">
-      <nav className="flex w-full md:w-1/3 rounded-box shadow-lg p-4 mx-4 md:mx-0 border-2 border-primary/20 transition-shadow backdrop-blur-[2px] bg-base-100/5">
-        <ul className="flex flex-wrap justify-center items-center gap-4 md:gap-8 w-full text-base text-primary/80">
+    <div className="navbar fixed left-0 right-0 z-50 flex justify-center mt-2 md:mt-4">
+      <nav className="flex w-[98%] sm:w-[95%] md:w-2/3 lg:w-1/2 xl:w-1/3 rounded-box shadow-lg p-3 px-16 md:p-4 mx-1 sm:mx-2 md:mx-0 border-2 border-primary/20 bg-base-100">
+        <ul className="flex justify-between md:justify-center items-center w-full md:gap-8 text-primary/80">
           <li>
             <a
               href="#"
               className="transition-all duration-200 hover:text-primary hover:scale-110 inline-block"
             >
-              Home
+              <span className="hidden md:inline text-sm md:text-base">
+                Home
+              </span>
+              <FaHome className="inline md:hidden w-5 h-5" />
             </a>
           </li>
           <li>
@@ -31,15 +37,10 @@ export const Navbar = () => {
               href="#experience"
               className="transition-all duration-200 hover:text-primary hover:scale-110 inline-block"
             >
-              Experience
-            </a>
-          </li>
-          <li>
-            <a
-              href="#skills"
-              className="transition-all duration-200 hover:text-primary hover:scale-110 inline-block"
-            >
-              Skills
+              <span className="hidden md:inline text-sm md:text-base">
+                Work
+              </span>
+              <MdCardTravel className="inline md:hidden w-5 h-5" />
             </a>
           </li>
           <li>
@@ -47,7 +48,10 @@ export const Navbar = () => {
               href="#projects"
               className="transition-all duration-200 hover:text-primary hover:scale-110 inline-block"
             >
-              Projects
+              <span className="hidden md:inline text-sm md:text-base">
+                Projects
+              </span>
+              <FaScrewdriverWrench className="inline md:hidden w-5 h-5" />
             </a>
           </li>
           <li>
@@ -55,29 +59,19 @@ export const Navbar = () => {
               href="#contact"
               className="transition-all duration-200 hover:text-primary hover:scale-110 inline-block"
             >
-              Contact
+              <span className="hidden md:inline text-sm md:text-base">
+                Contact
+              </span>
+              <FaNewspaper className="inline md:hidden w-5 h-5" />
             </a>
           </li>
           <li>
             <button
               onClick={toggleTheme}
-              className="btn btn-circle btn-ghost btn-sm text-primary hover:scale-110"
+              className="btn btn-circle btn-ghost btn-sm text-primary hover:scale-110 text-primary/80 hover:text-primary"
               aria-label="Toggle theme"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-5 h-5 swap-on"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
-                />
-              </svg>
+              <FaSun className="w-5 h-5" />
             </button>
           </li>
         </ul>
