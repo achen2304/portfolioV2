@@ -97,12 +97,12 @@ export const Contact = () => {
                   </a>
                 </div>
 
-                <div className="flex space-x-4">
+                <div className="flex space-x-4 justify-center">
                   <a
                     href="https://github.com/achen2304"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn-circle btn-outline text-primary/80 hover:bg-primary hover:border-primary"
+                    className="flex items-center space-x-3 text-primary/80 hover:text-primary transition-colors"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +117,7 @@ export const Contact = () => {
                     href="https://linkedin.com/in/achen2304"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn-circle btn-outline text-primary/80 hover:bg-primary hover:border-primary"
+                    className="flex items-center space-x-3 text-primary/80 hover:text-primary transition-colors"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

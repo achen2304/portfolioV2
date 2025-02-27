@@ -23,7 +23,7 @@ export const Projects = () => {
         'My First Portfolio Website using React and NodeMailer for a basic backend. Built with Tailwind CSS and Framer Motion. ',
       tech: ['React', 'Node.js', 'Express'],
       image: 'portfolio_v1.png',
-      link: '#',
+      link: 'https://portfolio-website-v1-flame.vercel.app/',
       github: 'https://github.com/achen2304/portfolio-website',
     },
     {
