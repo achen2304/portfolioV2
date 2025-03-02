@@ -3,7 +3,7 @@ export const Experience = () => {
     {
       title: 'Student',
       company: 'Iowa State University',
-      period: '2023 - present',
+      period: 'Aug 2023 - present',
       description:
         'Currently a student at Iowa State University pursuing a Bachelor of Science in Computer Engineering.',
     },

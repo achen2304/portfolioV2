@@ -5,11 +5,12 @@ export const Projects = () => {
     {
       title: 'Chardle.com - Character Guessing Game',
       description:
-        'A full-stack web game built with React/Tailwind CSS and Express.js/MongoDB with over 100 Daily Active Users.',
+        'A full-stack web game built with React/Tailwind CSS and Express.js/MongoDB with over 100 daily active users.',
       tech: [
         'JavaScript',
         'React',
         'Tailwind CSS',
+        'HTML/CSS',
         'Node.js',
         'Express',
         'MongoDB',
@@ -20,8 +21,8 @@ export const Projects = () => {
     {
       title: 'Portfolio V1',
       description:
-        'My First Portfolio Website using React and NodeMailer for a basic backend. Built with Tailwind CSS and Framer Motion. ',
-      tech: ['React', 'Node.js', 'Express'],
+        'My first portfolio website using React and NodeMailer/Express.js for a basic backend.',
+      tech: ['JavaScript', 'React', 'HTML/CSS', 'Node.js', 'Express'],
       image: 'portfolio_v1.png',
       link: 'https://portfolio-website-v1-flame.vercel.app/',
       github: 'https://github.com/achen2304/portfolio-website',
