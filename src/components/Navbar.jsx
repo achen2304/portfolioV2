@@ -1,4 +1,4 @@
-import { FaHome, FaSun } from 'react-icons/fa';
+import { FaHome, FaSun, FaMoon } from 'react-icons/fa';
 import { MdCardTravel } from 'react-icons/md';
 import { FaNewspaper, FaScrewdriverWrench } from 'react-icons/fa6';
 import { useEffect, useState } from 'react';
@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 export const Navbar = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +23,7 @@ export const Navbar = () => {
     // Check for saved theme preference or use system preference
     const savedTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', savedTheme);
+    setTheme(savedTheme);
   }, []);
 
   const toggleTheme = () => {
@@ -29,6 +31,7 @@ export const Navbar = () => {
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
+    setTheme(newTheme);
   };
 
   return (
@@ -89,7 +92,11 @@ export const Navbar = () => {
               className="btn btn-circle btn-ghost btn-sm text-primary hover:scale-110 text-primary/80 hover:text-primary"
               aria-label="Toggle theme"
             >
-              <FaSun className="w-5 h-5" />
+              {theme === 'dark' ? (
+                <FaSun className="w-5 h-5" />
+              ) : (
+                <FaMoon className="w-5 h-5" />
+              )}
             </button>
           </li>
         </ul>
