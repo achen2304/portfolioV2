@@ -45,7 +45,10 @@ export const Experience = () => {
                   index % 2 === 0 ? 'start' : 'end'
                 } md:mb-10`}
               >
-                <div className="card border border-primary/20 backdrop-blur-[2px] bg-base-100/5">
+                <div
+                  className="card border border-primary/20 backdrop-blur-[2px] bg-base-100/5 
+                             hover:shadow-xl hover:border-primary/30 transition-all"
+                >
                   <div className="card-body">
                     <p className="text-sm text-primary/60">{exp.period}</p>
                     <h3 className="card-title text-lg text-primary -mt-1 mb-0">

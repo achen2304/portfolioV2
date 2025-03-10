@@ -5,7 +5,10 @@ export const About = () => {
         <h2 className="text-3xl font-bold mb-8 text-center text-primary">
           About Me
         </h2>
-        <div className="card border border-primary/20 transition-shadow backdrop-blur-[2px] bg-base-100/5">
+        <div
+          className="card border border-primary/20 backdrop-blur-[2px] bg-base-100/5
+                          hover:shadow-xl hover:border-primary/30 transition-all"
+        >
           <div className="card-body">
             <p className="text-lg text-primary/80">
               I'm a full stack software engineer studying Computer Engineering

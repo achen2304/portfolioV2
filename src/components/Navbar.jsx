@@ -74,7 +74,10 @@ export const Navbar = () => {
 
   return (
     <div className="navbar fixed left-0 right-0 z-50 flex justify-center mt-2 md:mt-4">
-      <nav className="flex w-[98%] sm:w-[95%] md:w-2/3 lg:w-1/2 xl:w-1/3 rounded-box shadow-lg p-3 px-16 md:p-4 mx-1 sm:mx-2 md:mx-0 border-2 border-primary/20 bg-base-100">
+      <nav
+        className="flex w-[98%] sm:w-[95%] md:w-2/3 lg:w-1/2 xl:w-1/3 rounded-box shadow-lg p-3 px-16 md:p-4 mx-1 sm:mx-2 md:mx-0 border-2 border-primary/20 bg-base-100 
+                   hover:shadow-xl hover:border-primary/30 transition-all"
+      >
         <ul className="flex justify-between md:justify-center items-center w-full md:gap-8 text-primary/80">
           <li className="relative group">
             <a

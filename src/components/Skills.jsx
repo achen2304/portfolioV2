@@ -72,7 +72,7 @@ export const Skills = () => {
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="card border border-primary/20 backdrop-blur-[2px] bg-base-100/5"
+              className="card border border-primary/20 hover:shadow-xl hover:border-primary/30 transition-all duration-300 backdrop-blur-[2px] bg-base-100/5"
             >
               <div className="card-body">
                 <h3 className="card-title text-xl mb-4 text-primary mx-auto">
@@ -82,7 +82,7 @@ export const Skills = () => {
                   {category.skills.map((skill, skillIndex) => (
                     <div
                       key={skillIndex}
-                      className="flex flex-col items-center justify-between h-20"
+                      className="flex flex-col items-center justify-between h-20 hover:text-primary hover:scale-[1.02] transition-all"
                     >
                       <div className="flex items-center justify-center h-8">
                         {skill.icon}
