@@ -3,11 +3,16 @@ export const Experience = () => {
     {
       title: 'Student',
       company: 'Iowa State University',
-      period: 'Aug 2023 - present',
+      period: 'Aug 2023 - May 2027',
       description:
         'Currently a student at Iowa State University pursuing a Bachelor of Science in Computer Engineering.',
     },
-    // Add more experiences here
+    {
+      title: 'Student',
+      company: 'Mason City High School',
+      period: 'Aug 2019 - May 2023',
+      description: 'Graduated from Mason City High School with a 4.0 GPA.',
+    },
   ];
 
   return (
@@ -20,6 +25,7 @@ export const Experience = () => {
         <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
           {experiences.map((exp, index) => (
             <li key={index}>
+              {index !== 0 && <hr className="bg-primary/20" />}
               <div className="timeline-middle">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -34,26 +40,25 @@ export const Experience = () => {
                   />
                 </svg>
               </div>
-
               <div
                 className={`timeline-${
                   index % 2 === 0 ? 'start' : 'end'
-                } md:text-${index % 2 === 0 ? 'right' : 'left'}`}
+                } md:mb-10`}
               >
                 <div className="card border border-primary/20 backdrop-blur-[2px] bg-base-100/5">
                   <div className="card-body">
-                    <h3 className="card-title text-lg text-primary">
-                      {exp.title}
+                    <p className="text-sm text-primary/60">{exp.period}</p>
+                    <h3 className="card-title text-lg text-primary -mt-1 mb-0">
+                      {exp.company}
                     </h3>
-                    <p className="text-sm text-primary/60">
-                      {exp.company} | {exp.period}
-                    </p>
-                    <p className="text-primary/80">{exp.description}</p>
+                    <p className="text-primary/80 -mt-1">{exp.title}</p>
+                    <p className="text-sm text-primary/60">{exp.description}</p>
                   </div>
                 </div>
               </div>
-
-              <hr className="bg-primary/20" />
+              {index !== experiences.length - 1 && (
+                <hr className="bg-primary/20" />
+              )}
             </li>
           ))}
         </ul>

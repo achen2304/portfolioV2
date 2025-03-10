@@ -67,7 +67,7 @@ export const Contact = () => {
         </h2>
         <div className="grid md:grid-cols-2 gap-6">
           {/* Left Card - Contact Info */}
-          <div className="card border border-primary/20 transition-shadow backdrop-blur-[2px] bg-base-100/5">
+          <div className="card border border-primary/20 transition-shadow backdrop-blur-[2px] bg-base-100/5 pt-4">
             <div className="card-body flex flex-col items-center justify-center">
               <div className="space-y-6 text-center">
                 <div className="flex items-center space-x-3 text-primary/80 hover:text-primary transition-colors">
