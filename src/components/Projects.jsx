@@ -46,36 +46,42 @@ export const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="card border border-primary/20 hover:shadow-lg transition-shadow backdrop-blur-[2px] bg-base-100/5"
+              className="card border border-primary/20 hover:shadow-xl hover:border-primary/30 transition-all duration-300 backdrop-blur-[2px] bg-base-100/5 group"
             >
               {project.image && (
                 <figure className="px-4 pt-4">
                   <img
                     src={getImageUrl(project.image)}
                     alt={project.title}
-                    className="rounded-xl object-cover w-full h-48"
+                    className="rounded-xl object-cover w-full h-48 group-hover:scale-[1.02] transition-transform duration-300"
                     loading="lazy"
                   />
                 </figure>
               )}
-              <div className="card-body">
-                <h3 className="card-title text-primary">{project.title}</h3>
-                <p className="text-primary/80">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mt-4">
+              <div className="card-body gap-3">
+                <h3 className="card-title text-primary text-xl font-bold">
+                  {project.title}
+                </h3>
+                <p className="text-primary/80 text-sm leading-relaxed">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-1.5">
                   {project.tech.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="badge badge-outline text-primary"
+                      className="px-2.5 py-0.5 text-xs font-medium rounded-full bg-base-100/30 border border-primary/10 
+                               text-primary/70 hover:text-primary hover:bg-primary/5 transition-all duration-300 backdrop-blur-sm"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                <div className="card-actions justify-end mt-4">
+                <div className="card-actions justify-end mt-2">
                   {project.github && (
                     <a
                       href={project.github}
-                      className="btn btn-sm btn-outline text-primary hover:bg-primary hover:text-base-100"
+                      className="btn btn-sm normal-case bg-base-100/30 border border-primary/20 text-primary/80 
+                               hover:bg-primary hover:text-base-100 hover:border-primary transition-all duration-300"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -85,7 +91,8 @@ export const Projects = () => {
                   {project.link && (
                     <a
                       href={project.link}
-                      className="btn btn-sm btn-outline text-primary hover:bg-primary hover:text-base-100"
+                      className="btn btn-sm normal-case bg-primary/10 border border-primary/30 text-primary 
+                               hover:bg-primary hover:text-base-100 hover:border-primary transition-all duration-300"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

@@ -78,7 +78,7 @@ export const Skills = () => {
                 <h3 className="card-title text-xl mb-4 text-primary mx-auto">
                   {category.title}
                 </h3>
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-3 gap-4 text-primary/80">
                   {category.skills.map((skill, skillIndex) => (
                     <div
                       key={skillIndex}
