@@ -105,7 +105,7 @@ export const Contact = () => {
                     href="https://github.com/achen2304"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-3 text-primary/80 hover:text-primary transition-all"
+                    className="flex items-center space-x-3 text-primary/80 hover:text-primary"
                   >
                     <FaGithub className="h-6 w-6 hover:scale-[1.1] transition-all" />
                   </a>
