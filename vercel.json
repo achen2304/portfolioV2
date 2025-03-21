@@ -4,5 +4,11 @@
   "installCommand": "npm install",
   "framework": "vite",
   "outputDirectory": "dist",
-  "routes": [{ "src": "/api/contact", "dest": "/api/contact.js" }]
+  "routes": [{ "src": "/api/contact", "dest": "/api/contact.js" }],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
