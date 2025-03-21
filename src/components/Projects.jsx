@@ -16,6 +16,7 @@ export const Projects = () => {
   const [touchEnd, setTouchEnd] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
+  const [touchStartY, setTouchStartY] = useState(null);
 
   // Minimum swipe distance in pixels
   const minSwipeDistance = 75;
@@ -61,10 +62,22 @@ export const Projects = () => {
   const onTouchStart = (e) => {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
+    setTouchStartY(e.targetTouches[0].clientY);
   };
 
   const onTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX);
+    if (!touchStart) return;
+
+    const currentX = e.targetTouches[0].clientX;
+    const currentY = e.targetTouches[0].clientY;
+    const deltaX = touchStart - currentX;
+    const deltaY = touchStartY - currentY;
+
+    // If horizontal scrolling is detected, prevent vertical scrolling
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+      e.preventDefault();
+      setTouchEnd(currentX);
+    }
   };
 
   const onTouchEnd = () => {
@@ -134,6 +147,8 @@ export const Projects = () => {
             onMouseMove={onMouseMove}
             onMouseUp={onMouseUp}
             onMouseLeave={onMouseLeave}
+            onTouchCancel={onTouchEnd}
+            style={{ touchAction: 'pan-y pinch-zoom' }}
           >
             {featuredProjects.map((project, index) => (
               <div
