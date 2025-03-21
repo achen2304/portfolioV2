@@ -62,6 +62,13 @@
         "image": "customers_table.png",
         "link": "https://2025-dwolla-intern-tech-assessment.vercel.app/",
         "github": "https://github.com/achen2304/2025-dwolla-intern-tech-assessment"
+      },
+      {
+        "title": "National Parks Page",
+        "description": "Midterm project for the coms319 ISU class. A simple page that displays information about national parks.",
+        "tech": ["Javascript", "HTML/CSS"],
+        "image": "coms319_midterm.png",
+        "github": "https://github.com/achen2304/319-midterm-project"
       }
     ]
   },

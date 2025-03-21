@@ -7,6 +7,7 @@ import {
   FaJava,
   FaPython,
   FaGoogle,
+  FaBootstrap,
 } from 'react-icons/fa';
 import {
   SiTailwindcss,
@@ -70,6 +71,10 @@ export const skillCategories = [
       {
         name: 'Tailwind CSS',
         icon: <SiTailwindcss className="w-5 h-5 sm:w-8 sm:h-8" />,
+      },
+      {
+        name: 'Bootstrap',
+        icon: <FaBootstrap className="w-5 h-5 sm:w-8 sm:h-8" />,
       },
       { name: 'Material UI', icon: <MuiIcon /> },
       {
