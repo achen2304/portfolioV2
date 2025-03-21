@@ -4,8 +4,8 @@ export const Experience = () => {
   const experiences = content.experiences;
 
   return (
-    <section id="experience" className="py-20 px-4 sm:px-8">
-      <div className="max-w-3xl mx-auto">
+    <section id="experience" className="py-20">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <h2 className="text-3xl font-bold mb-12 text-center text-primary">
           Experience
         </h2>

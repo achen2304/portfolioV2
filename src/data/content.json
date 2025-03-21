@@ -23,6 +23,13 @@
         "image": "portfolio_v1.png",
         "link": "https://portfolio-website-v1-flame.vercel.app/",
         "github": "https://github.com/achen2304/freecodecamp"
+      },
+      {
+        "title": "Pi Pico KeyBoard",
+        "description": "A keyboard made using a Raspberry Pi Pico and custom PCB.",
+        "tech": ["Raspberry Pi Pico", "KiCad"],
+        "image": "keyboard_v1.png",
+        "github": "https://github.com/achen2304/Pi-Pico-Keyboard"
       }
     ],
 
@@ -48,13 +55,6 @@
     "allCertifications": [],
 
     "allProjects": [
-      {
-        "title": "Pi Pico KeyBoard",
-        "description": "A keyboard made using a Raspberry Pi Pico and custom PCB.",
-        "tech": ["Raspberry Pi Pico", "KiCad"],
-        "image": "keyboard_v1.png",
-        "github": "https://github.com/achen2304/Pi-Pico-Keyboard"
-      },
       {
         "title": "Customers Table",
         "description": "A table of customers with a search bar, sort, and basic CRUD operations. For full functionality, please clone the repo and run locally.",
