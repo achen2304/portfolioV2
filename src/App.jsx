@@ -7,6 +7,9 @@ import { Experience } from './components/Experience';
 import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
 import { Contact } from './components/Contact';
+import { Routes, Route } from 'react-router-dom';
+import { Home } from './pages/home';
+import { ProjectsPage } from './pages/ProjectsPage';
 
 function App() {
   const [theme, setTheme] = useState(() => {
@@ -58,14 +61,10 @@ function App() {
       {/* Content */}
       <div className="relative z-10">
         <Navbar />
-        <main className="container mx-auto px-4 md:px-8">
-          <Hero />
-          <About />
-          <Experience />
-          <Skills />
-          <Projects />
-          <Contact />
-        </main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+        </Routes>
       </div>
     </div>
   );

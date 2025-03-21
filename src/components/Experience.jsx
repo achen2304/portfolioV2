@@ -1,19 +1,7 @@
+import content from '../data/content.json';
+
 export const Experience = () => {
-  const experiences = [
-    {
-      title: 'Student',
-      company: 'Iowa State University',
-      period: 'Aug 2023 - May 2027',
-      description:
-        'Currently a student at Iowa State University pursuing a Bachelor of Science in Computer Engineering.',
-    },
-    {
-      title: 'Student',
-      company: 'Mason City High School',
-      period: 'Aug 2019 - May 2023',
-      description: 'Graduated from Mason City High School with a 4.0 GPA.',
-    },
-  ];
+  const experiences = content.experiences;
 
   return (
     <section id="experience" className="py-20">

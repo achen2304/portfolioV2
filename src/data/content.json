@@ -1,0 +1,83 @@
+{
+  "projects": {
+    "featured": [
+      {
+        "title": "Chardle.com - Character Guessing Game",
+        "description": "A full-stack web game built with React/Tailwind CSS and Express.js/MongoDB with over 100 daily active users.",
+        "tech": [
+          "JavaScript",
+          "React",
+          "Tailwind CSS",
+          "HTML/CSS",
+          "Node.js",
+          "Express",
+          "MongoDB"
+        ],
+        "image": "chardle.png",
+        "link": "https://chardle.com/"
+      },
+      {
+        "title": "Portfolio V1",
+        "description": "My first portfolio website using React and NodeMailer/Express.js for a basic backend.",
+        "tech": ["JavaScript", "React", "HTML/CSS", "Node.js", "Express"],
+        "image": "portfolio_v1.png",
+        "link": "https://portfolio-website-v1-flame.vercel.app/",
+        "github": "https://github.com/achen2304/freecodecamp"
+      }
+    ],
+
+    "certifications": [
+      {
+        "title": "Back End Development and APIs Certification",
+        "description": "Completed the Back End Development and APIs certifications from freeCodeCamp.",
+        "tech": ["freeCodeCamp", "HTML/CSS", "Node.js", "Express", "MongoDB"],
+        "image": "fcc_backend.png",
+        "link": "https://www.freecodecamp.org/certification/fcccbbe069c-bfb8-42db-aad1-7655322fb15e/back-end-development-and-apis",
+        "github": "https://github.com/achen2304/freecodecamp"
+      },
+      {
+        "title": "JavaScript Algorithms and Data Structures Certification",
+        "description": "Completed the JavaScript Algorithms and Data Structures from freeCodeCamp.",
+        "tech": ["freeCodeCamp", "HTML/CSS", "JavaScript"],
+        "image": "fcc_js.png",
+        "link": "https://www.freecodecamp.org/certification/fcccbbe069c-bfb8-42db-aad1-7655322fb15e/javascript-algorithms-and-data-structures-v8",
+        "github": "https://github.com/achen2304/freecodecamp"
+      }
+    ],
+
+    "allCertifications": [],
+
+    "allProjects": [
+      {
+        "title": "Pi Pico KeyBoard",
+        "description": "A keyboard made using a Raspberry Pi Pico and custom PCB.",
+        "tech": ["Raspberry Pi Pico", "KiCad"],
+        "image": "keyboard_v1.png",
+        "github": "https://github.com/achen2304/Pi-Pico-Keyboard"
+      },
+      {
+        "title": "Customers Table",
+        "description": "A table of customers with a search bar, sort, and basic CRUD operations. For full functionality, please clone the repo and run locally.",
+        "tech": ["TypeScript", "React", "Next.js", "Material UI", "HTML/CSS"],
+        "image": "customers_table.png",
+        "link": "https://2025-dwolla-intern-tech-assessment.vercel.app/",
+        "github": "https://github.com/achen2304/2025-dwolla-intern-tech-assessment"
+      }
+    ]
+  },
+
+  "experiences": [
+    {
+      "title": "Student",
+      "company": "Iowa State University",
+      "period": "Aug 2023 - present",
+      "description": "Currently a student at Iowa State University pursuing a Bachelor of Science in Computer Engineering."
+    },
+    {
+      "title": "Student",
+      "company": "Mason City High School",
+      "period": "Aug 2021 - May 2023",
+      "description": "Graduated from Mason City High School with a 4.0 GPA."
+    }
+  ]
+}

@@ -1,49 +1,23 @@
 import { getImageUrl } from '../utils/img';
+import content from '../data/content.json';
+import { Link } from 'react-router-dom';
+import { FiExternalLink } from 'react-icons/fi';
 
 export const Projects = () => {
-  const projects = [
-    {
-      title: 'Chardle.com - Character Guessing Game',
-      description:
-        'A full-stack web game built with React/Tailwind CSS and Express.js/MongoDB with over 100 daily active users.',
-      tech: [
-        'JavaScript',
-        'React',
-        'Tailwind CSS',
-        'HTML/CSS',
-        'Node.js',
-        'Express',
-        'MongoDB',
-      ],
-      image: 'chardle.png',
-      link: 'https://chardle.com/',
-    },
-    {
-      title: 'Portfolio V1',
-      description:
-        'My first portfolio website using React and NodeMailer/Express.js for a basic backend.',
-      tech: ['JavaScript', 'React', 'HTML/CSS', 'Node.js', 'Express'],
-      image: 'portfolio_v1.png',
-      link: 'https://portfolio-website-v1-flame.vercel.app/',
-      github: 'https://github.com/achen2304/portfolio-website',
-    },
-    {
-      title: 'Pi Pico KeyBoard',
-      description: 'A keyboard made using a Raspberry Pi Pico and custom PCB.',
-      tech: ['Raspberry Pi Pico', 'KiCad'],
-      image: 'keyboard_v1.png',
-      github: 'https://github.com/achen2304/Pi-Pico-Keyboard',
-    },
+  const featuredProjects = [
+    ...content.projects.featured,
+    ...content.projects.certifications,
   ];
 
   return (
     <section id="projects" className="py-20">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-center text-primary">
-          Projects
+        <h2 className="text-3xl font-bold mb-12 text-center text-primary">
+          Featured Projects and Certifications
         </h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          {projects.map((project, index) => (
+
+        <div className="grid md:grid-cols-2 gap-6 mb-6">
+          {featuredProjects.map((project, index) => (
             <div
               key={index}
               className="card border border-primary/20 hover:shadow-xl hover:border-primary/30 transition-all duration-300 backdrop-blur-[2px] bg-base-100/5 group"
@@ -103,6 +77,18 @@ export const Projects = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="flex justify-center">
+          <Link
+            to="/projects"
+            className="btn btn-md normal-case bg-base-100/30 border border-primary/80 text-primary/80 
+                     hover:bg-primary hover:text-base-100 hover:border-primary transition-all duration-300
+                     px-4"
+          >
+            View All Projects
+            <FiExternalLink className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     </section>
