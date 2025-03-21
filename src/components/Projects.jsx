@@ -19,7 +19,7 @@ export const Projects = () => {
   const [touchStartY, setTouchStartY] = useState(null);
 
   // Minimum swipe distance in pixels
-  const minSwipeDistance = 75;
+  const minSwipeDistance = 50;
 
   const scrollToSlide = (index) => {
     if (carouselRef.current) {
@@ -30,7 +30,7 @@ export const Projects = () => {
       const slideWidth =
         window.innerWidth >= 768
           ? totalWidth * 0.45 // Desktop: 45% of container width
-          : totalWidth * 0.75; // Mobile: 85% of container width
+          : totalWidth * 0.75; // Mobile: 75% of container width
 
       // Calculate exact scroll position
       const scrollAmount = index * (slideWidth + gap);
@@ -210,7 +210,9 @@ export const Projects = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          Live Demo
+                          {project.isCertification
+                            ? 'View Certificate'
+                            : 'Live Demo'}
                         </a>
                       )}
                     </div>
