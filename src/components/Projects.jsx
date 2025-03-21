@@ -11,7 +11,7 @@ export const Projects = () => {
 
   return (
     <section id="projects" className="py-20">
-      <div className="max-w-3xl mx-auto">
+      <div className=" max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold mb-12 text-center text-primary">
           Featured Projects and Certifications
         </h2>
@@ -20,7 +20,7 @@ export const Projects = () => {
           {featuredProjects.map((project, index) => (
             <div
               key={index}
-              className="card border border-primary/20 hover:shadow-xl hover:border-primary/30 transition-all duration-300 backdrop-blur-[2px] bg-base-100/5 group"
+              className="mx-4 sm:mx-0 card border border-primary/20 hover:shadow-xl hover:border-primary/30 transition-all duration-300 backdrop-blur-[2px] bg-base-100/5 group"
             >
               {project.image && (
                 <figure className="px-4 pt-4">

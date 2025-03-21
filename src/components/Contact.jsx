@@ -68,7 +68,7 @@ export const Contact = () => {
         <div className="grid md:grid-cols-2 gap-6">
           {/* Left Card - Contact Info */}
           <div
-            className="card border border-primary/20 backdrop-blur-[2px] bg-base-100/5 pt-4
+            className="mx-4 sm:mx-0 card border border-primary/20 backdrop-blur-[2px] bg-base-100/5 pt-4
                           hover:shadow-xl hover:border-primary/30 transition-all"
           >
             <div className="card-body flex flex-col items-center justify-center">
@@ -123,10 +123,10 @@ export const Contact = () => {
           </div>
           {/* Right Card - Contact Form */}
           <div
-            className="card border border-primary/20 backdrop-blur-[2px] bg-base-100/5
+            className="mx-4 sm:mx-0 card border border-primary/20 backdrop-blur-[2px] bg-base-100/5
                           hover:shadow-xl hover:border-primary/30 transition-all"
           >
-            <div className="card-body">
+            <div className="card-body ">
               <form className="space-y-4" onSubmit={handleSubmit}>
                 <input
                   type="text"

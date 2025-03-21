@@ -13,7 +13,7 @@ export const ProjectsPage = () => {
   ];
 
   return (
-    <section className="min-h-screen pt-32 pb-20 px-4 sm:px-8">
+    <section className="min-h-screen pt-32 pb-20">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold mb-12 text-center text-primary">
           All Projects
@@ -27,7 +27,12 @@ export const ProjectsPage = () => {
             </h3>
             <div className="grid md:grid-cols-2 gap-6 mb-16">
               {content.projects.featured.map((project, index) => (
-                <ProjectCard key={`featured-${index}`} project={project} />
+                <div
+                  key={`featured-${index}`}
+                  className="mx-4 sm:mx-0 card border border-primary/20 hover:shadow-xl hover:border-primary/30 transition-all duration-300 backdrop-blur-[2px] bg-base-100/5 group"
+                >
+                  <ProjectCardContent project={project} />
+                </div>
               ))}
             </div>
           </>
@@ -41,7 +46,12 @@ export const ProjectsPage = () => {
             </h3>
             <div className="grid md:grid-cols-2 gap-6 mb-16">
               {Certifications.map((project, index) => (
-                <ProjectCard key={`cert-${index}`} project={project} />
+                <div
+                  key={`cert-${index}`}
+                  className="mx-4 sm:mx-0 card border border-primary/20 hover:shadow-xl hover:border-primary/30 transition-all duration-300 backdrop-blur-[2px] bg-base-100/5 group"
+                >
+                  <ProjectCardContent project={project} />
+                </div>
               ))}
             </div>
           </>
@@ -55,7 +65,12 @@ export const ProjectsPage = () => {
             </h3>
             <div className="grid md:grid-cols-2 gap-6 mb-16">
               {content.projects.allProjects.map((project, index) => (
-                <ProjectCard key={`all-${index}`} project={project} />
+                <div
+                  key={`all-${index}`}
+                  className="mx-4 sm:mx-0 card border border-primary/20 hover:shadow-xl hover:border-primary/30 transition-all duration-300 backdrop-blur-[2px] bg-base-100/5 group"
+                >
+                  <ProjectCardContent project={project} />
+                </div>
               ))}
             </div>
           </>
@@ -65,9 +80,9 @@ export const ProjectsPage = () => {
   );
 };
 
-// Separate ProjectCard component for cleaner code
-const ProjectCard = ({ project }) => (
-  <div className="card border border-primary/20 hover:shadow-xl hover:border-primary/30 transition-all duration-300 backdrop-blur-[2px] bg-base-100/5 group">
+// Separate the card content into its own component
+const ProjectCardContent = ({ project }) => (
+  <>
     {project.image && (
       <figure className="px-4 pt-4">
         <img
@@ -116,10 +131,10 @@ const ProjectCard = ({ project }) => (
             target="_blank"
             rel="noopener noreferrer"
           >
-            Live Demo
+            {project.isCertification ? 'View Certificate' : 'Live Demo'}
           </a>
         )}
       </div>
     </div>
-  </div>
+  </>
 );

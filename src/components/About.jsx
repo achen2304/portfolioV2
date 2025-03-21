@@ -6,7 +6,7 @@ export const About = () => {
           About Me
         </h2>
         <div
-          className="card border border-primary/20 backdrop-blur-[2px] bg-base-100/5
+          className="card mx-4 sm:mx-0 border border-primary/20 backdrop-blur-[2px] bg-base-100/5
                           hover:shadow-xl hover:border-primary/30 transition-all"
         >
           <div className="card-body">

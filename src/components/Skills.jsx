@@ -11,7 +11,7 @@ export const Skills = () => {
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="card border border-primary/20 hover:shadow-xl hover:border-primary/30 transition-all duration-300 backdrop-blur-[2px] bg-base-100/5"
+              className="card mx-4 sm:mx-0 border border-primary/20 hover:shadow-xl hover:border-primary/30 transition-all duration-300 backdrop-blur-[2px] bg-base-100/5"
             >
               <div className="card-body">
                 <h3 className="card-title text-xl mb-4 text-primary mx-auto">
