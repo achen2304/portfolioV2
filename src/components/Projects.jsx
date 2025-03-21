@@ -1,3 +1,4 @@
+import { useState, useRef } from 'react';
 import { getImageUrl } from '../utils/img';
 import content from '../data/content.json';
 import { Link } from 'react-router-dom';
@@ -9,82 +10,179 @@ export const Projects = () => {
     ...content.projects.certifications,
   ];
 
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const carouselRef = useRef(null);
+
+  const scrollToSlide = (index) => {
+    if (carouselRef.current) {
+      const scrollAmount = (carouselRef.current.offsetWidth / 2) * index;
+      carouselRef.current.style.scrollBehavior = 'smooth';
+      carouselRef.current.scrollLeft = scrollAmount;
+    }
+  };
+
+  const handlePrevious = () => {
+    const newSlide =
+      currentSlide === 0 ? featuredProjects.length - 1 : currentSlide - 1;
+    setCurrentSlide(newSlide);
+    scrollToSlide(newSlide);
+  };
+
+  const handleNext = () => {
+    const newSlide =
+      currentSlide === featuredProjects.length - 1 ? 0 : currentSlide + 1;
+    setCurrentSlide(newSlide);
+    scrollToSlide(newSlide);
+  };
+
+  const handleDotClick = (index) => {
+    setCurrentSlide(index);
+    scrollToSlide(index);
+  };
+
   return (
     <section id="projects" className="py-20">
-      <div className=" max-w-3xl mx-auto">
+      <div className="max-w-3xl mx-auto px-4 sm:px-0">
         <h2 className="text-3xl font-bold mb-12 text-center text-primary">
           Featured Projects and Certifications
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-6">
-          {featuredProjects.map((project, index) => (
-            <div
-              key={index}
-              className="mx-4 sm:mx-0 card border border-primary/20 hover:shadow-xl hover:border-primary/30 transition-all duration-300 backdrop-blur-[2px] bg-base-100/5 group"
-            >
-              {project.image && (
-                <figure className="px-4 pt-4">
-                  <img
-                    src={getImageUrl(project.image)}
-                    alt={project.title}
-                    className="rounded-xl object-cover w-full h-48 group-hover:scale-[1.02] transition-transform duration-300"
-                    loading="lazy"
-                  />
-                </figure>
-              )}
-              <div className="card-body gap-3">
-                <h3 className="card-title text-primary text-xl font-bold">
-                  {project.title}
-                </h3>
-                <p className="text-primary/80 text-sm leading-relaxed">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  {project.tech.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-2.5 py-0.5 text-xs font-medium rounded-full bg-base-100/30 border border-primary/10 
-                               text-primary/70 hover:text-primary hover:bg-primary/5 transition-all duration-300 backdrop-blur-sm"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <div className="card-actions justify-end mt-2">
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      className="btn btn-sm normal-case bg-base-100/30 border border-primary/20 text-primary/80 
-                               hover:bg-primary hover:text-base-100 hover:border-primary transition-all duration-300"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      GitHub
-                    </a>
+        <div className="mb-12 relative">
+          <div
+            ref={carouselRef}
+            className="carousel w-full gap-6 overflow-x-hidden"
+          >
+            {featuredProjects.map((project, index) => (
+              <div key={index} className="carousel-item w-full md:w-1/2 px-3">
+                <div
+                  className="card w-full border border-primary/20 hover:shadow-xl hover:border-primary/30 
+                            transition-all duration-300 backdrop-blur-[2px] bg-base-100/5 group h-full"
+                >
+                  {project.image && (
+                    <figure className="px-4 pt-4">
+                      <img
+                        src={getImageUrl(project.image)}
+                        alt={project.title}
+                        className="rounded-xl object-cover w-full h-48 group-hover:scale-[1.02] transition-transform duration-300"
+                        loading="lazy"
+                      />
+                    </figure>
                   )}
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      className="btn btn-sm normal-case bg-primary/10 border border-primary/30 text-primary 
-                               hover:bg-primary hover:text-base-100 hover:border-primary transition-all duration-300"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Live Demo
-                    </a>
-                  )}
+                  <div className="card-body gap-3">
+                    <h3 className="card-title text-primary text-xl font-bold">
+                      {project.title}
+                    </h3>
+                    <p className="text-primary/80 text-sm leading-relaxed">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {project.tech.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="px-2.5 py-0.5 text-xs font-medium rounded-full bg-base-100/30 border border-primary/10 
+                                   text-primary/70 hover:text-primary hover:bg-primary/5 transition-all duration-300 backdrop-blur-sm"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="card-actions justify-end mt-2">
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          className="btn btn-sm normal-case bg-base-100/30 border border-primary/20 text-primary/80 
+                                   hover:bg-primary hover:text-base-100 hover:border-primary transition-all duration-300"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          GitHub
+                        </a>
+                      )}
+                      {project.link && (
+                        <a
+                          href={project.link}
+                          className="btn btn-sm normal-case bg-primary/10 border border-primary/30 text-primary 
+                                   hover:bg-primary hover:text-base-100 hover:border-primary transition-all duration-300"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Live Demo
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-[-2rem] right-[-2rem] top-1/2">
+            <button
+              onClick={handlePrevious}
+              className="btn btn-circle btn-md bg-base-100/30 hover:bg-base-100/50 border-primary/20 
+                         hover:border-primary/40 text-primary/80 hover:text-primary shadow-lg 
+                         backdrop-blur-sm transition-all duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2.5}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
+            <button
+              onClick={handleNext}
+              className="btn btn-circle btn-md bg-base-100/30 hover:bg-base-100/50 border-primary/20 
+                         hover:border-primary/40 text-primary/80 hover:text-primary shadow-lg 
+                         backdrop-blur-sm transition-all duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2.5}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div className="flex justify-center gap-2 mt-4">
+            {featuredProjects.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => handleDotClick(index)}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                  currentSlide === index
+                    ? 'bg-primary scale-125'
+                    : 'bg-primary/20 hover:bg-primary/40'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
         <div className="flex justify-center">
           <Link
             to="/projects"
-            className="btn btn-md normal-case bg-base-100/30 border border-primary/80 text-primary/80 
-                     hover:bg-primary hover:text-base-100 hover:border-primary transition-all duration-300
-                     px-4"
+            className="btn btn-md normal-case bg-base-100/30 border border-primary/80 
+                   text-primary/80 hover:bg-primary hover:text-base-100 
+                   hover:border-primary transition-all duration-300 px-4"
           >
             View All Projects
             <FiExternalLink className="w-4 h-4" />
