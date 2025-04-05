@@ -16,38 +16,39 @@ const ProjectCarousel = ({ projects, sectionTitle }) => {
 
   const scrollToSlide = (index) => {
     if (carouselRef.current) {
-      const totalWidth = carouselRef.current.offsetWidth;
-      const gap = 32;
-
-      const slideWidth =
-        window.innerWidth >= 768
-          ? totalWidth * 0.65 // Desktop: 65% of container width
-          : totalWidth * 0.85; // Mobile: 85% of container width
-
-      const scrollAmount = index * (slideWidth + gap);
-      const maxScroll = (projects.length - 1) * (slideWidth + gap);
-      const finalScroll = Math.min(scrollAmount, maxScroll);
-
-      carouselRef.current.style.scrollBehavior = 'smooth';
-      carouselRef.current.scrollLeft = finalScroll;
+      const slides = carouselRef.current.children;
+      if (slides[index]) {
+        slides[index].scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'start',
+        });
+      }
     }
   };
 
-  const handlePrevious = () => {
-    const newSlide =
-      currentSlide === 0 ? projects.length - 1 : currentSlide - 1;
+  const handlePrevious = (e) => {
+    if (e) e.preventDefault();
+    let newSlide = currentSlide - 1;
+    if (newSlide < 0) {
+      newSlide = projects.length - 1;
+    }
     setCurrentSlide(newSlide);
     scrollToSlide(newSlide);
   };
 
-  const handleNext = () => {
-    const newSlide =
-      currentSlide === projects.length - 1 ? 0 : currentSlide + 1;
+  const handleNext = (e) => {
+    if (e) e.preventDefault();
+    let newSlide = currentSlide + 1;
+    if (newSlide >= projects.length) {
+      newSlide = 0;
+    }
     setCurrentSlide(newSlide);
     scrollToSlide(newSlide);
   };
 
   const onTouchStart = (e) => {
+    e.preventDefault();
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
     setTouchStartY(e.targetTouches[0].clientY);
@@ -55,16 +56,8 @@ const ProjectCarousel = ({ projects, sectionTitle }) => {
 
   const onTouchMove = (e) => {
     if (!touchStart) return;
-
-    const currentX = e.targetTouches[0].clientX;
-    const currentY = e.targetTouches[0].clientY;
-    const deltaX = touchStart - currentX;
-    const deltaY = touchStartY - currentY;
-
-    if (Math.abs(deltaX) > Math.abs(deltaY)) {
-      e.preventDefault();
-      setTouchEnd(currentX);
-    }
+    e.preventDefault();
+    setTouchEnd(e.targetTouches[0].clientX);
   };
 
   const onTouchEnd = () => {
@@ -79,6 +72,17 @@ const ProjectCarousel = ({ projects, sectionTitle }) => {
     } else if (isRightSwipe) {
       handlePrevious();
     }
+
+    // Reset touch states
+    setTouchStart(null);
+    setTouchEnd(null);
+    setTouchStartY(null);
+  };
+
+  const onTouchCancel = () => {
+    setTouchStart(null);
+    setTouchEnd(null);
+    setTouchStartY(null);
   };
 
   const onMouseDown = (e) => {
@@ -125,19 +129,26 @@ const ProjectCarousel = ({ projects, sectionTitle }) => {
       <div className="mb-16 relative">
         <div
           ref={carouselRef}
-          className="carousel w-full gap-8 overflow-x-hidden cursor-grab active:cursor-grabbing pl-0 pr-[15%] md:pr-[12.5%]"
+          className="carousel w-full gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide pl-0 pr-[15%] md:pr-[12.5%]"
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
+          onTouchCancel={onTouchCancel}
           onMouseDown={onMouseDown}
           onMouseMove={onMouseMove}
           onMouseUp={onMouseUp}
           onMouseLeave={onMouseLeave}
-          onTouchCancel={onTouchEnd}
-          style={{ touchAction: 'pan-y pinch-zoom' }}
+          style={{
+            touchAction: 'none',
+            scrollBehavior: 'smooth',
+            WebkitOverflowScrolling: 'touch',
+          }}
         >
           {projects.map((project, index) => (
-            <div key={index} className="carousel-item w-[85%] md:w-[65%] px-0">
+            <div
+              key={index}
+              className="carousel-item w-[85%] md:w-[65%] px-0 snap-start"
+            >
               <div
                 className="card w-full h-full border border-primary/20 hover:shadow-xl hover:border-primary/30 
                             transition-all duration-300 backdrop-blur-[2px] bg-base-100/5 group"
@@ -148,7 +159,7 @@ const ProjectCarousel = ({ projects, sectionTitle }) => {
           ))}
         </div>
 
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-2 sm:left-[-2rem] right-2 sm:right-[-2rem] top-1/2">
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-2 sm:left-[-2rem] right-2 sm:right-[-2rem] top-1/2 z-10">
           <button
             onClick={handlePrevious}
             className="btn btn-circle btn-sm sm:btn-md bg-base-100/30 hover:bg-base-100/50 border-primary/20 
