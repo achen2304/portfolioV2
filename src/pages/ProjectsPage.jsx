@@ -226,7 +226,7 @@ export const ProjectsPage = () => {
     <section className="min-h-screen pt-32 pb-20">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <h2 className="text-3xl font-bold mb-12 text-center text-primary">
-          All Projects
+          All Projects and Certifications
         </h2>
 
         <ProjectCarousel

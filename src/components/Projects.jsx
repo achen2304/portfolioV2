@@ -129,7 +129,7 @@ export const Projects = () => {
     <section id="projects" className="py-20">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <h2 className="text-3xl font-bold mb-12 text-center text-primary">
-          Featured Projects and Certifications
+          Featured Projects & Certifications
         </h2>
 
         <div className="mb-12 relative">
@@ -289,7 +289,7 @@ export const Projects = () => {
                    text-primary/80 hover:bg-primary hover:text-base-100 
                    hover:border-primary transition-all duration-300 px-4"
           >
-            View All Projects
+            View All
             <FiExternalLink className="w-4 h-4" />
           </Link>
         </div>
