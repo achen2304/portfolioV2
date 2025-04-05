@@ -24,18 +24,14 @@ export const Projects = () => {
   const scrollToSlide = (index) => {
     if (carouselRef.current) {
       const totalWidth = carouselRef.current.offsetWidth;
-      const gap = 32; // 8px gap
+      const gap = 32;
 
-      // Calculate slide width including gap
       const slideWidth =
         window.innerWidth >= 768
-          ? totalWidth * 0.45 // Desktop: 45% of container width
-          : totalWidth * 0.75; // Mobile: 75% of container width
+          ? totalWidth * 0.65 // Desktop: 65% of container width
+          : totalWidth * 0.85; // Mobile: 85% of container width
 
-      // Calculate exact scroll position
       const scrollAmount = index * (slideWidth + gap);
-
-      // Ensure we don't scroll past the end
       const maxScroll = (featuredProjects.length - 1) * (slideWidth + gap);
       const finalScroll = Math.min(scrollAmount, maxScroll);
 
@@ -153,11 +149,11 @@ export const Projects = () => {
             {featuredProjects.map((project, index) => (
               <div
                 key={index}
-                className="carousel-item w-[85%] md:w-[45%] px-0"
+                className="carousel-item w-[85%] md:w-[65%] px-0"
               >
                 <div
                   className="card w-full h-full border border-primary/20 hover:shadow-xl hover:border-primary/30 
-                            transition-all duration-300 backdrop-blur-[2px] bg-base-100/5 group"
+                              transition-all duration-300 backdrop-blur-[2px] bg-base-100/5 group"
                 >
                   {project.image && (
                     <figure className="px-4 pt-4">
@@ -180,9 +176,8 @@ export const Projects = () => {
                       {project.tech.map((tech, techIndex) => (
                         <span
                           key={techIndex}
-                          className="px-2.5 py-0.5 text-xs font-medium rounded-full bg-base-100/30 
-                                   border border-primary/10 text-primary/70 hover:text-primary 
-                                   hover:bg-primary/5 transition-all duration-300 backdrop-blur-sm"
+                          className="px-2.5 py-0.5 text-xs font-medium rounded-full bg-base-100/30 border border-primary/10 
+                                   text-primary/70 hover:text-primary hover:bg-primary/5 transition-all duration-300 backdrop-blur-sm"
                         >
                           {tech}
                         </span>
@@ -192,9 +187,8 @@ export const Projects = () => {
                       {project.github && (
                         <a
                           href={project.github}
-                          className="btn btn-xs sm:btn-sm normal-case bg-base-100/30 border border-primary/20 
-                                   text-primary/80 hover:bg-primary hover:text-base-100 
-                                   hover:border-primary transition-all duration-300"
+                          className="btn btn-xs sm:btn-sm normal-case bg-base-100/30 border border-primary/20 text-primary/80 
+                                   hover:bg-primary hover:text-base-100 hover:border-primary transition-all duration-300"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -204,9 +198,8 @@ export const Projects = () => {
                       {project.link && (
                         <a
                           href={project.link}
-                          className="btn btn-xs sm:btn-sm normal-case bg-primary/10 border border-primary/30 
-                                   text-primary hover:bg-primary hover:text-base-100 
-                                   hover:border-primary transition-all duration-300"
+                          className="btn btn-xs sm:btn-sm normal-case bg-primary/10 border border-primary/30 text-primary 
+                                   hover:bg-primary hover:text-base-100 hover:border-primary transition-all duration-300"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -222,9 +215,12 @@ export const Projects = () => {
             ))}
           </div>
 
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-2 sm:left-[-2rem] right-2 sm:right-[-2rem] top-1/2">
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-2 sm:left-[-2rem] right-2 sm:right-[-2rem] top-1/2 z-10">
             <button
-              onClick={handlePrevious}
+              onClick={(e) => {
+                e.preventDefault();
+                handlePrevious();
+              }}
               className="btn btn-circle btn-sm sm:btn-md bg-base-100/30 hover:bg-base-100/50 border-primary/20 
                        hover:border-primary/40 text-primary/80 hover:text-primary shadow-lg 
                        backdrop-blur-sm transition-all duration-300"
@@ -245,7 +241,10 @@ export const Projects = () => {
               </svg>
             </button>
             <button
-              onClick={handleNext}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNext();
+              }}
               className="btn btn-circle btn-sm sm:btn-md bg-base-100/30 hover:bg-base-100/50 border-primary/20 
                        hover:border-primary/40 text-primary/80 hover:text-primary shadow-lg 
                        backdrop-blur-sm transition-all duration-300"

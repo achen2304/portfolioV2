@@ -20,7 +20,9 @@ const ProjectCarousel = ({ projects, sectionTitle }) => {
       const gap = 32;
 
       const slideWidth =
-        window.innerWidth >= 768 ? totalWidth * 0.45 : totalWidth * 0.75;
+        window.innerWidth >= 768
+          ? totalWidth * 0.65 // Desktop: 65% of container width
+          : totalWidth * 0.85; // Mobile: 85% of container width
 
       const scrollAmount = index * (slideWidth + gap);
       const maxScroll = (projects.length - 1) * (slideWidth + gap);
@@ -135,7 +137,7 @@ const ProjectCarousel = ({ projects, sectionTitle }) => {
           style={{ touchAction: 'pan-y pinch-zoom' }}
         >
           {projects.map((project, index) => (
-            <div key={index} className="carousel-item w-[85%] md:w-[45%] px-0">
+            <div key={index} className="carousel-item w-[85%] md:w-[65%] px-0">
               <div
                 className="card w-full h-full border border-primary/20 hover:shadow-xl hover:border-primary/30 
                             transition-all duration-300 backdrop-blur-[2px] bg-base-100/5 group"
