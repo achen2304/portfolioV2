@@ -30,6 +30,13 @@
         "tech": ["Raspberry Pi Pico", "KiCad"],
         "image": "keyboard_v1.png",
         "github": "https://github.com/achen2304/Pi-Pico-Keyboard"
+      },
+      {
+        "title": "Embedded iRobot Roomba Programming",
+        "description": "A project for the cpre288 ISU class that uses C to program an iRobot Roomba to navigate a through an obstacle course using embedded functions like UART, GPIO, I2C, interrupts, etc.",
+        "tech": ["Raspberry Pi Pico", "C++"],
+        "image": "roomba_v1.png",
+        "github": "https://github.com/achen2304/roomba_maze"
       }
     ],
 
