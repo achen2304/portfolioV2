@@ -17,6 +17,13 @@
         "link": "https://chardle.com/"
       },
       {
+        "title": "Embedded iRobot Roomba Programming",
+        "description": "Built a real-time control system for an iRobot Roomba featuring custom UART keyboard navigation, precision servo-controlled scanning, and integrated distance sensing through ultrasonic and IR sensors.",
+        "tech": ["C", "TI Tiva TM4C123G", "UART/PuTTY"],
+        "image": "cpre288_roomba.jpeg",
+        "github": "https://github.com/AdelramIV/CPRE288/tree/master"
+      },
+      {
         "title": "Portfolio V1",
         "description": "My first portfolio website using React and NodeMailer/Express.js for a basic backend.",
         "tech": ["JavaScript", "React", "HTML/CSS", "Node.js", "Express"],
@@ -30,17 +37,12 @@
         "tech": ["Raspberry Pi Pico", "KiCad"],
         "image": "keyboard_v1.png",
         "github": "https://github.com/achen2304/Pi-Pico-Keyboard"
-      },
-      {
-        "title": "Embedded iRobot Roomba Programming",
-        "description": "A project for the cpre288 ISU class that uses C to program an iRobot Roomba to navigate a through an obstacle course using embedded functions like UART, GPIO, I2C, interrupts, etc.",
-        "tech": ["Raspberry Pi Pico", "C++"],
-        "image": "roomba_v1.png",
-        "github": "https://github.com/achen2304/roomba_maze"
       }
     ],
 
-    "certifications": [
+    "certifications": [],
+
+    "allCertifications": [
       {
         "title": "Back End Development and APIs Certification",
         "description": "Completed the Back End Development and APIs certifications from freeCodeCamp.",
@@ -58,8 +60,6 @@
         "github": "https://github.com/achen2304/freecodecamp"
       }
     ],
-
-    "allCertifications": [],
 
     "allProjects": [
       {
@@ -81,6 +81,12 @@
   },
 
   "experiences": [
+    {
+      "title": "Software Engineering Intern",
+      "company": "Dwolla",
+      "period": "May 2025 - Present",
+      "description": "Incoming Software Engineering Intern at Dwolla."
+    },
     {
       "title": "Student",
       "company": "Iowa State University",
