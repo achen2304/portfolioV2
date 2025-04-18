@@ -1,58 +1,136 @@
-# Personal Portfolio Website
+# Portfolio V2
 
-A modern, responsive portfolio website built with React and Vite, showcasing my projects and professional experience.
+A modern, responsive portfolio website built with React, Tailwind CSS, and DaisyUI. This portfolio showcases projects, certifications, and professional experience with a clean, minimalist design.
 
-## 🚀 Features
+## Features
 
-- Responsive design
-- Contact form
-- Project showcase
-- Resume download
-- Modern UI with Tailwind CSS
+- 🎨 Modern, responsive design
+- 📱 Mobile-first approach
+- 🎭 Smooth animations and transitions
+- 🖼️ Project showcase with interactive carousel
+- 📄 Professional experience timeline
+- 📧 Contact form with email integration
+- 🌙 Dark mode support
+- 🚀 Optimized performance
+- 🔍 SEO friendly
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- React
-- Vite
-- Tailwind CSS
-- DaisyUI
-- Express (Backend)
-- Nodemailer
+- **Frontend Framework:** React
+- **Styling:** Tailwind CSS
+- **UI Components:** DaisyUI
+- **Icons:** React Icons
+- **Routing:** React Router
+- **Form Handling:** EmailJS
+- **Deployment:** Vercel
 
-## 📦 Quick Start
+## Project Structure
 
-1. Clone and install:
+```
+src/
+├── components/         # Reusable components
+├── pages/             # Page components
+├── data/              # Content data
+├── utils/             # Utility functions
+├── assets/            # Static assets
+└── App.jsx            # Main application component
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 
 ```bash
-git clone https://github.com/achen2304/portfolioV2.git
+git clone https://github.com/yourusername/portfolioV2.git
 cd portfolioV2
-npm install
 ```
 
-2. Set up environment variables:
-Create `.env` file with:
-
-```
-EMAIL=your-email@example.com
-EMAIL_PASSWORD=your-email-password
-PORT=3001
-```
-
-3. Run the project:
+2. Install dependencies:
 
 ```bash
-npm run dev # Frontend
-npm run server # Backend
-npm run dev:all # Both
+npm install
+# or
+yarn install
 ```
 
-## 👤 Author
+3. Create a `.env` file in the root directory and add your environment variables:
 
-Cai Chen
-- Website: [caizchen.com](https://caizchen.com)
-- LinkedIn: [achen2304](https://www.linkedin.com/in/achen2304/)
+```env
+VITE_EMAILJS_PUBLIC_KEY=your_emailjs_public_key
+VITE_EMAILJS_SERVICE_ID=your_emailjs_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
+```
 
-## 📄 License
+4. Start the development server:
 
-MIT
+```bash
+npm run dev
+# or
+yarn dev
+```
 
+## Deployment
+
+The project is configured for deployment on Vercel. To deploy:
+
+1. Push your changes to your GitHub repository
+2. Connect your repository to Vercel
+3. Configure environment variables in Vercel dashboard
+4. Deploy!
+
+## Customization
+
+### Content
+
+Edit the content in `src/data/content.json` to update:
+
+- Projects
+- Certifications
+- Experience
+- Skills
+- Contact information
+
+### Styling
+
+The project uses Tailwind CSS for styling. You can customize:
+
+- Colors in `tailwind.config.js`
+- Typography in `src/index.css`
+- Component styles in individual component files
+
+### Images
+
+Add your images to `public/images/` and update the paths in `content.json`.
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [DaisyUI](https://daisyui.com/)
+- [EmailJS](https://www.emailjs.com/)
+- [Vercel](https://vercel.com/)
+
+## Contact
+
+Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - email@example.com
+
+Project Link: [https://github.com/yourusername/portfolioV2](https://github.com/yourusername/portfolioV2)
