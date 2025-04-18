@@ -2,8 +2,8 @@
   "projects": {
     "featured": [
       {
-        "title": "Chardle.com - Character Guessing Game",
-        "description": "A full-stack web game built with React/Tailwind CSS and Express.js/MongoDB with over 100 daily active users.",
+        "title": "Chardle.com - Daily Character Guessing Game",
+        "description": "A full-stack web game built with React/Tailwind CSS and Express.js/MongoDB with over 5,000 monthly users. The game itself is similar to Wordle, but instead of guessing a word, you're guessing the daily character from a show/movie.",
         "tech": [
           "JavaScript",
           "React",
@@ -25,15 +25,15 @@
       },
       {
         "title": "Portfolio V1",
-        "description": "My first portfolio website using React and NodeMailer/Express.js for a basic backend.",
+        "description": "My first portfolio website using React and NodeMailer/Express.js for a basic backend. Initially built when I didn't have too much knowledge in web development or its frameworks.",
         "tech": ["JavaScript", "React", "HTML/CSS", "Node.js", "Express"],
         "image": "portfolio_v1.png",
         "link": "https://portfolio-website-v1-flame.vercel.app/",
         "github": "https://github.com/achen2304/freecodecamp"
       },
       {
-        "title": "Pi Pico KeyBoard",
-        "description": "A keyboard made using a Raspberry Pi Pico and custom PCB.",
+        "title": "Pi Pico Keyboard",
+        "description": "A custom keyboard made using a Raspberry Pi Pico and custom PCB made in KiCard. Built by hand soldering switches, diodes, and Pi Pico to the PCB. Programmed using a open source library called QMK.",
         "tech": ["Raspberry Pi Pico", "KiCad"],
         "image": "keyboard_v1.png",
         "github": "https://github.com/achen2304/Pi-Pico-Keyboard"
