@@ -63,6 +63,14 @@
 
     "allProjects": [
       {
+        "title": "Solar - ISU SwanHacks 2024",
+        "description": "VR Application with a teacher admin website to create multiple classrooms and monitor students' progress as they use the VR learning experience",
+        "tech": ["Java", "HTML", "CSS", "Unity", "C#"],
+        "image": "solar.png",
+        "link": "https://www.youtube.com/watch?v=Y292rH9iVnk",
+        "github": "https://github.com/JoshuaArceo/SwanHacks2024"
+      },
+      {
         "title": "Customers Table",
         "description": "A table of customers with a search bar, sort, and basic CRUD operations. For full functionality, please clone the repo and run locally.",
         "tech": ["TypeScript", "React", "Next.js", "Material UI", "HTML/CSS"],
