@@ -24,12 +24,12 @@
         "github": "https://github.com/AdelramIV/CPRE288/tree/master"
       },
       {
-        "title": "Portfolio V1",
-        "description": "My first portfolio website using React and NodeMailer/Express.js for a basic backend. Initially built when I didn't have too much knowledge in web development or its frameworks.",
-        "tech": ["JavaScript", "React", "HTML/CSS", "Node.js", "Express"],
-        "image": "portfolio_v1.png",
-        "link": "https://portfolio-website-v1-flame.vercel.app/",
-        "github": "https://github.com/achen2304/freecodecamp"
+        "title": "Work Sync - Workforce Management App",
+        "description": "Developed a spring boot application that allows companies to manage their employees', manager, project, W2s, inventory, and more!",
+        "tech": ["Java", "Spring Boot", "MySQL"],
+        "image": "work_sync.png",
+        "github": "https://github.com/achen2304/WorkSync",
+        "link": "https://youtu.be/jfVFVW7QsOc"
       },
       {
         "title": "Pi Pico Keyboard",
@@ -37,6 +37,14 @@
         "tech": ["Raspberry Pi Pico", "KiCad"],
         "image": "keyboard_v1.png",
         "github": "https://github.com/achen2304/Pi-Pico-Keyboard"
+      },
+      {
+        "title": "Portfolio V1",
+        "description": "My first portfolio website using React and NodeMailer/Express.js for a basic backend. Initially built when I didn't have too much knowledge in web development or its frameworks.",
+        "tech": ["JavaScript", "React", "HTML/CSS", "Node.js", "Express"],
+        "image": "portfolio_v1.png",
+        "link": "https://portfolio-website-v1-flame.vercel.app/",
+        "github": "https://github.com/achen2304/freecodecamp"
       }
     ],
 
